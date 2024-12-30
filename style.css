@@ -9,7 +9,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #2c3e50;
+    color: #f0ec24;
 }
 
 a {
@@ -23,7 +23,7 @@ a:hover {
 
 /* Navigation Styles */
 nav {
-    background: #34495e;
+    background: #1578db;
     color: #fff;
     padding: 15px 0;
     position: sticky;
