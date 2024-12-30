@@ -4,26 +4,26 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* Light background for contrast */
     color: #333;
 }
 
 h1, h2, h3, h4 {
-    color: #2c3e50;
+    color: #2c3e50; /* Darker text for headings */
 }
 
 a {
     text-decoration: none;
-    color: #2980b9;
+    color: #e74c3c; /* Vibrant red for links */
 }
 
 a:hover {
-    color: #3498db;
+    color: #c0392b; /* Darker red on hover */
 }
 
 /* Navigation Styles */
 nav {
-    background: #34495e;
+    background: #2980b9; /* Vibrant blue */
     color: #fff;
     padding: 15px 0;
     position: sticky;
@@ -82,7 +82,7 @@ nav {
 }
 
 .cta-button {
-    background: #2980b9;
+    background: #e74c3c; /* Vibrant red */
     color: white;
     padding: 12px 25px;
     border: none;
@@ -92,7 +92,7 @@ nav {
 }
 
 .cta-button:hover {
-    background: #3498db;
+    background: #c0392b; /* Darker red on hover */
     transform: scale(1.05);
 }
 
@@ -109,7 +109,7 @@ nav {
 }
 
 .card {
-    background: white;
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin: 20px;
@@ -132,7 +132,7 @@ nav {
 }
 
 .article, .video {
-    background: white;
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -146,7 +146,7 @@ nav {
 /* External Resources Section */
 .external-resources {
     padding: 50px 20px;
-    background: #ecf0f1;
+    background: #f9e79f; /* Light yellow background */
 }
 
 .external-resources ul {
@@ -165,12 +165,3 @@ nav {
 }
 
 /* Booking Section */
-.booking-section {
-    padding: 50px 20px;
-    background: #ecf0f1;
-}
-
-.booking-form {
-    max-width: 600px;
-    margin: auto;
-   
