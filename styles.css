@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +8,16 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    line-height: 1.6;
 }
 
 /* Navigation */
 nav {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
@@ -30,10 +35,15 @@ nav {
     font-weight: bold;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .nav-links a {
     color: #333;
     text-decoration: none;
-    margin-left: 2rem;
     transition: color 0.3s ease;
 }
 
@@ -43,19 +53,18 @@ nav {
 
 .mobile-menu {
     display: none;
+    cursor: pointer;
 }
 
 /* Hero Section */
 .hero-section {
     height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('placeholder.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('placeholder.jpg') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
+    color: white;
 }
 
 .hero-content {
@@ -105,12 +114,13 @@ nav {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card h4 {
@@ -134,7 +144,7 @@ nav {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .emergency-grid {
@@ -154,6 +164,7 @@ footer {
     background-color: #333;
     color: white;
     padding: 2rem 0;
+    text-align: center;
 }
 
 .footer-container {
@@ -174,6 +185,7 @@ footer {
 
 .footer-grid ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-grid a {
@@ -188,6 +200,7 @@ footer {
 
 .social-links {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -195,10 +208,6 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-    }
-    
-    .nav-links.active {
-        display: flex;
         flex-direction: column;
         position: absolute;
         top: 70px;
@@ -206,13 +215,22 @@ footer {
         right: 0;
         background-color: white;
         padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
-    .nav-links.active a {
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
         margin: 0.5rem 0;
     }
-    
+
     .mobile-menu {
         display: block;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
     }
 }
