@@ -9,7 +9,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #111111;
+    color: #eff168;
 }
 
 a {
@@ -51,7 +51,7 @@ nav {
 
 .nav-links a {
     margin: 0 15px;
-    color: #161515;
+    color: #dfb8a6;
     transition: color 0.3s;
 }
 
@@ -81,7 +81,7 @@ nav {
 
 .cta-button {
     background: #2980b9;
-    color: rgb(19, 18, 18);
+    color: rgb(139, 114, 114);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
