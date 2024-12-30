@@ -4,6 +4,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background: url('DALL·E 2024-12-31 00.58.07 - A serene and peaceful image symbolizing mental health wellness, featuring soft natural elements like calm water, lush green trees, a person meditating.webp') no-repeat center center/cover; /* Local stock image */
+    background-attachment: fixed;
     background-color: #f0f8ff; /* Light background for contrast */
     color: #74ced4;
 }
