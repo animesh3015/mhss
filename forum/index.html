@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Community Forum for Mental Health Support. Sign in or sign up to join the discussions.">
     <title>Community Forum</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <h1 class="text-2xl font-bold text-gray-800">Community Forum</h1>
-                <div id="authButtons" class="flex space-x-4">
-                    <button id="signInBtn" class="px-4 py-2 text-blue-600 hover:text-blue-800">Sign In</button>
-                    <button id="signUpBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Sign Up</button>
-                </div>
-                <div id="userInfo" class="hidden">
-                    <span id="username" class="mr-4 text-gray-700"></span>
-                    <button id="signOutBtn" class="px-4 py-2 text-red-600 hover:text-red-800">Sign Out</button>
-                </div>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Homepage">
+                <h1>MHSS Forum</h1>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#community">Community</a>
+                <a href="index.html#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Sign In Modal -->
-    <div id="signInModal" class="hidden modal-overlay">
-        <div class="modal">
-            <h3 class="text-lg font-medium text-gray-900 mb-4">Sign In</h3>
-            <form id="signInForm" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
+    <!-- Forum Header -->
+    <header class="forum-header">
+        <h1>Welcome to the MHSS Community Forum</h1>
+        <p>Join the conversation. Share your thoughts, seek advice, and connect with others.</p>
+    </header>
+
+    <!-- Forum Content -->
+    <main class="forum-container">
+        <!-- Past Messages Section -->
+        <section class="messages-section">
+            <h2>Past Messages</h2>
+            <div class="messages-box">
+                <div class="message">
+                    <p><strong>User1:</strong> Self-care is so important. Any tips for staying consistent?</p>
+                    <small>Posted on: 2024-12-30</small>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
+                <div class="message">
+                    <p><strong>User2:</strong> I recommend starting small. Daily habits make a big difference!</p>
+                    <small>Posted on: 2024-12-31</small>
                 </div>
-                <div class="flex justify-end space-x-2">
-                    <button type="button" class="closeModal px-4 py-2 text-gray-600">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Sign In</button>
+                <!-- Additional messages can go here -->
+            </div>
+        </section>
+
+        <!-- Sign-In Section -->
+        <section class="auth-section">
+            <div class="auth-forms">
+                <div class="sign-in">
+                    <h2>Sign In</h2>
+                    <form id="sign-in-form" action="sign_in.html" method="post">
+                        <label for="signin-email">Email:</label>
+                        <input type="email" id="signin-email" name="email" required>
+
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password" name="password" required>
+
+                        <button type="submit" class="cta-button">Sign In</button>
+                    </form>
                 </div>
-                <div id="signInError" class="error-message hidden"></div>
+
+                <!-- Sign-Up Section -->
+                <div class="sign-up">
+                    <h2>Sign Up</h2>
+                    <form id="sign-up-form" action="sign_up.html" method="post">
+                        <label for="signup-name">Name:</label>
+                        <input type="text" id="signup-name" name="name" required>
+
+                        <label for="signup-email">Email:</label>
+                        <input type="email" id="signup-email" name="email" required>
+
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="password" required>
+
+                        <button type="submit" class="cta-button">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Form Section -->
+        <section class="message-form-section">
+            <h2>Post a Message</h2>
+            <form id="message-form" action="submit_message.html" method="post">
+                <label for="message-content">Your Message:</label>
+                <textarea id="message-content" name="message" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Post Message</button>
             </form>
-        </div>
-    </div>
-
-    <!-- Sign Up Modal -->
-    <div id="signUpModal" class="hidden modal-overlay">
-        <div class="modal">
-            <h3 class="text-lg font-medium text-gray-900 mb-4">Sign Up</h3>
-            <form id="signUpForm" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Username</label>
-                    <input type="text" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
-                </div>
-                <div class="flex justify-end space-x-2">
-                    <button type="button" class="closeModal px-4 py-2 text-gray-600">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Sign Up</button>
-                </div>
-                <div id="signUpError" class="error-message hidden"></div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto mt-8 px-4">
-        <div id="authRequiredMessage" class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-            <p class="text-yellow-700">Please sign in or sign up to participate in the forum discussions.</p>
-        </div>
-
-        <div id="messageInput" class="hidden bg-white rounded-lg shadow-md p-4 mb-6">
-            <form id="messageForm" class="space-y-4">
-                <textarea
-                    placeholder="Write your message..."
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    rows="3"
-                    required
-                ></textarea>
-                <div class="flex justify-end">
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Post Message</button>
-                </div>
-            </form>
-        </div>
-
-        <div id="messagesContainer" class="space-y-4">
-            <!-- Messages will be loaded here dynamically -->
-        </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 MHSS Community Forum. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

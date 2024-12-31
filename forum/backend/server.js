@@ -28,7 +28,7 @@ db.connect(err => {
         console.error("Database connection failed:", err);
         process.exit(1); // Stop the server if DB connection fails
     }
-    console.log("Connected to MySQL database.");
+    console.log("Conneted to MySQL database.");
 });
 
 // Routes
